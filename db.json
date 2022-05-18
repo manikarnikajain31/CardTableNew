@@ -1,0 +1,61 @@
+{
+  "Users":[
+    {
+      "id": 1,
+      "name":"Virat Kohli",
+      "email":"virat@gmail.com",
+      "phone":9876543210,
+      "profile": "viratkohli.jpg"
+    },
+    {
+      "id": 2,
+      "name":"Rohit Sharma",
+      "email":"rohit@gmail.com",
+      "phone":912345678,
+      "profile": "rohitsharma.jpg"
+    },
+    {
+      "id": 3,
+      "name":"Sachin Tendulkar",
+      "email":"sachin@gmail.com",
+      "phone":9234567810,
+      "profile": "sachin.jpg"
+    },
+    {
+      "id": 4,
+      "name":"MS Dhoni",
+      "email":"ms@gmail.com",
+      "phone":9345678912,
+      "profile": "dhoni.jpg"
+    },
+    
+    {
+      "id": 5,
+      "name":"Hardik Pandya",
+      "email":"hardik@gmail.com",
+      "phone":8380067167,
+      "profile": "hardik.jpg"
+    },
+    {
+      "id": 6,
+      "name":"Ravindra Jadeja",
+      "email":"ravindra@gmail.com",
+      "phone":9822067167,
+      "profile": "ravindra.jpg"
+    },
+    {
+      "id": 7,
+      "name":"Shikhar Dhawan",
+      "email":"shikhar@gmail.com",
+      "phone":9764567167,
+      "profile": "Shikha.jpg"
+    },
+    {
+      "id": 8,
+      "name":"Yuvraj Singh",
+      "email":"yuvraj@gmail.com",
+      "phone":8380045667,
+      "profile": "yuvraj.jpg"
+    }
+  ]
+}
