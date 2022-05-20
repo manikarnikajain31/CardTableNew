@@ -3,9 +3,10 @@ export class Users {
     email: string | undefined;
     phone: number | undefined;
     profile: string | undefined;
-    id: any;
+    id: number | undefined;
 
-    constructor(name: string | undefined, email: string | undefined, phone: number | undefined, profile: string) {
+    constructor(id: number | undefined, name: string | undefined, email: string | undefined, phone: number | undefined, profile: string) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;

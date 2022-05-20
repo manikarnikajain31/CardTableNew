@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 // import { DialogService } from './services/dialog.service';
 // import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 
@@ -42,8 +42,8 @@ const ELEMENT_DATA: Users[] = [
 
 export class AppComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'Name', 'Email', 'Phone', 'Profile'];
-  dataArray = ELEMENT_DATA;
+  displayedColumns: any[] = ['id', 'name', 'email', 'phone', 'profile'];
+  dataArray = new MatTableDataSource<Users>(ELEMENT_DATA);
 
   searchField!: FormControl;
   columns: string[] | undefined;
@@ -65,9 +65,10 @@ export class AppComponent implements OnInit {
   email: string | undefined;
   phone: number | undefined;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator | any;
-  @ViewChild(MatSort) sort: MatSort | any;
-
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | any;
+  @ViewChild(MatSort) set matSort(sort: MatSort) {
+    this.dataArray.sort = sort;
+  }
 
 
   constructor(public rs: RestService,
@@ -84,7 +85,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers(1)
     this.dataArray.paginator = this.paginator;
-    this.dataArray.sort = this.sort;
   }
 
   setPageNo($event: any) { console.log(this.pageNo) }
