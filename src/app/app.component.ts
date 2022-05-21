@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 
 // Table
@@ -45,6 +46,7 @@ export class AppComponent implements OnInit {
   displayedColumns: any[] = ['id', 'name', 'email', 'phone', 'profile'];
   dataArray = new MatTableDataSource<Users>(ELEMENT_DATA);
 
+  searchValue: string = "";
   searchField!: FormControl;
   columns: string[] | undefined;
   sortedcolumn: string | undefined;
@@ -75,10 +77,15 @@ export class AppComponent implements OnInit {
     // private _dialog: MatDialog, private _dialogService: DialogService, //private _service:UserService
   ) {
     this.searchField = new FormControl();
+
   }
   // title = 'card-layout';
   // title = 'card-layout';
   exform!: FormGroup;
+  filterTable($event: any) {
+    this.dataArray.filter = $event.target.value.trim().toLowerCase();
+
+  }
 
 
 
@@ -144,6 +151,11 @@ export class AppComponent implements OnInit {
   //     this.ngOnInit();
   //     this.modalService.dismissAll();
   //   });
+  // }
+
+
+  // applyFilter(filterValue: string) {
+  //   this.dataArray.filter = filterValue.trim().toLowerCase();
   // }
 
 

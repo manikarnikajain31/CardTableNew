@@ -4,11 +4,7 @@
 
 <!-- Search Bar -->
 
-<!-- <ng-container *ngFor="let user of users">
-  <div class="course-container"></div>
-</ng-container> -->
-
-<div class="search-container">
+<div class="search-container" placeholder="Search">
   <span>Search : </span>
   <input type="text" [(ngModel)]="searchText" />
 </div>
@@ -89,10 +85,34 @@
   </div>
 </div>
 
-<!-- Table -->
+<!-- TABLE -->
+
+<!-- Search Bar -->
+
+<div
+  style="
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <label for="search" style="margin-right: 10px">Search</label>
+  <div style="flex: 1">
+    <mat-form-field style="width: 100%">
+      <input
+        matInput
+        appearance="fill"
+        (keyup)="filterTable($event)"
+        placeholder="Filter"
+        style="width: 100%"
+      />
+    </mat-form-field>
+  </div>
+</div>
 
 <div class="mat-elevation-z8 demo-table">
-  <table mat-table [dataSource]="dataArray" matSort>
+  <table mat-table [dataSource]="dataArray" style="width: 100%" matSort>
     <!-- id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell mat-sort-header *matHeaderCellDef>Id</th>

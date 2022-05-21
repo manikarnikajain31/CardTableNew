@@ -24,6 +24,8 @@ import { FilterPipe } from './Pipes/filter.pipe';
 // import { DialogService } from './services/dialog.service';
 // import { MatConfigDialogComponent } from './mat-config-dialog/mat-config-dialog.component';
 import { MatTableModule } from '@angular/material/table';
+import { SearchfilterPipe } from './searchfilter.pipe';
+import { MatInputModule } from '@angular/material/input';
 
 const Material = [
   MatToolbarModule,
@@ -43,6 +45,7 @@ const Material = [
     //FilterComponent,
     FilterPipe,
     // MatConfigDialogComponent,
+    SearchfilterPipe
 
   ],
   imports: [
@@ -63,11 +66,15 @@ const Material = [
     FormsModule,
     ReactiveFormsModule,
     //MatTableDataSource,
-    MatTableModule
+    MatTableModule,
+    //SearchfilterPipe,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [PicsumComponent, //MatConfigDialogComponent
-  ]
+  ],
+  exports: [SearchfilterPipe]
+
 })
 export class AppModule { }
