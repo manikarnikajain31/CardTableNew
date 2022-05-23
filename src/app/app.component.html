@@ -21,23 +21,26 @@
   <!-- Sorting -->
 
   <!-- <a class="link" (click)="sortedcolumn = 'name'" Sorting></a> -->
-  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px">
     <ng-container *ngFor="let user of users | sort: 'name'">
       <mat-card
-        class="mat-elevation-z4"
+        class="mat-elevation-z4 exp-card"
         *ngIf="
           searchText === '' ||
           user.email?.toLowerCase()?.includes(searchText.toLowerCase()) ||
           user.name?.toLowerCase()?.includes(searchText.toLowerCase())
         "
       >
+        {{ user.card }}
+
         <img
           mat-card-image
           src="/assets/img/{{ user.profile }}"
-          style="height: 200px"
+          style="height: 200px; object-fit: cover"
         />
         <mat-card-header>
           <mat-card-title
+            class="mat-card-title-card .mat-card-title-cdd"
             *ngIf="filterField === 'all' || filterField === 'name'"
             >{{ user.name }}</mat-card-title
           >
@@ -55,7 +58,10 @@
         </mat-card-header>
 
         <!-- Delete Operation -->
-        <button class="btn btn-sm btn-danger" (click)="openDelete(user)">
+        <button
+          class="btn btn-sm btn-danger crd-btn"
+          (click)="openDelete(user)"
+        >
           <i class="fa fa-remove"></i>Delete
         </button>
       </mat-card>
@@ -111,7 +117,7 @@
   </div>
 </div>
 
-<div class="mat-elevation-z8 demo-table">
+<div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataArray" style="width: 100%" matSort>
     <!-- id Column -->
     <ng-container matColumnDef="id">
@@ -139,6 +145,15 @@
       <th mat-header-cell *matHeaderCellDef>Profile</th>
       <td mat-cell *matCellDef="let element">{{ element.profile }}</td>
     </ng-container>
+
+    <!-- Delete Operation -->
+
+    <!-- <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element" class="fa fa-remove" (click)="">
+        <i (click)="openDelete(user)">Delete</a>
+      </td>
+    </ng-container> -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

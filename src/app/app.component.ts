@@ -16,6 +16,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { SearchfilterPipe } from './searchfilter.pipe';
+//import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+//import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 
 // Table
@@ -66,8 +68,11 @@ export class AppComponent implements OnInit {
   id: number | undefined;
   email: string | undefined;
   phone: number | undefined;
+  choose: string | undefined;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | any;
+  dialog: any;
+  dataSource: any;
   @ViewChild(MatSort) set matSort(sort: MatSort) {
     this.dataArray.sort = sort;
   }
@@ -157,6 +162,33 @@ export class AppComponent implements OnInit {
   // applyFilter(filterValue: string) {
   //   this.dataArray.filter = filterValue.trim().toLowerCase();
   // }
+
+
+  // Delete Operation
+
+
+  // openDialog(action: any, obj: { action: any; }) {
+  //   obj.action = action;
+  //   const dialogRef = this.dialog.open(DialogBoxComponent, {
+  //     width: '250px',
+  //     data: obj
+  //   });
+
+  //   dialogRef.afterClosed().subscribe((result: { event: string; data: any; }) => {
+  //     if (result.event == 'Delete') {
+  //       this.deleteRowData(result.data);
+  //     }
+  //   });
+  // }
+
+  // deleteRowData(row_obj: { id: any; }) {
+  //   this.dataSource = this.dataSource.filter((value: { id: any; }, key: any) => {
+  //     return value.id != row_obj.id;
+  //   });
+  // }
+
+
+
 
 
 

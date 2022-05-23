@@ -5,12 +5,6 @@
     padding: 16px;
 }
 
-/* #search {
-    width: 357px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-  } */
-
 
   .search-container {
     width: 357px;
@@ -37,30 +31,7 @@
     width: 357px;
     margin: 4px auto;
 
-  }
-
-
-  /* .form-group row{
-    width: 357px;
-    margin: 4px auto;    
-  }
-
-  #searchValue{
-    width: 297px;
-    padding: 15px 0 15px 20px;
-    font-size: 16px;
-    font-family: Montserrat, sans-serif;
-    border: 0 none;
-    height: 52px;
-    margin-right: 0;
-    color: white;
-    outline: none;
-    background: #1f7f5c;
-    float: left;
-    box-sizing: border-box;
-    transition: all 0.15s;    
-  } */
-  
+  }  
 
 
 .profile-pic-div{
@@ -77,6 +48,15 @@
     max-height : 160px;
     max-width: inherit;
 }
+
+/* .wrapper {
+  text-align: center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+} */
 
 #file{
     display: none;
@@ -155,14 +135,6 @@
     font-weight: bold;
   }
 
-  /* .table {
-    width: 100%;
-  }
-  
-  .mat-header-cell, mat-cell {
-    justify-content: center;
-  } */
-
   td, th {
     text-align: center !important;
     vertical-align: middle !important;
@@ -175,4 +147,27 @@
 td.mat-cell, th.mat-header-cell {
     text-align: center;
     justify-content:center;
+}
+
+.mat-card
+{
+  padding: 13px;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+.mat-card-header
+{
+  display : block;
+}
+
+.mat-card-title
+{
+  padding : 3px 0;
+}
+
+.mat-card-subtitle
+{
+  padding : 3px 0;
 }

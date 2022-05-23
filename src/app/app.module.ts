@@ -26,6 +26,8 @@ import { FilterPipe } from './Pipes/filter.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { MatInputModule } from '@angular/material/input';
+//import { DialogBoxComponent } from './dialog-box/dialog-box.component';   //Delete Operation
+//import { AlertModule } from 'ngx-bootstrap';
 
 const Material = [
   MatToolbarModule,
@@ -45,7 +47,8 @@ const Material = [
     //FilterComponent,
     FilterPipe,
     // MatConfigDialogComponent,
-    SearchfilterPipe
+    SearchfilterPipe,
+    //DialogBoxComponent
 
   ],
   imports: [
